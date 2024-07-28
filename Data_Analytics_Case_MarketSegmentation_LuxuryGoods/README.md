@@ -73,5 +73,11 @@ Q1_20: "When not on my boat, I often find myself doing boating related activitie
 Based on the descriptions of the attitudes that are loading into the first factor, we could say that the first factor measures a construct of "Passion and expertise around boating". We do not observe the extent to which passion is important for the respondents (the questionnaire does not ask a direct question about something called "personal image"); however, the actual attitudes allow deriving such a construct. ---> simply 29 questions to 10 main focus
 
 **##cluster analysis**
+5 clusters be selected
+![image](https://github.com/user-attachments/assets/69cdcdfb-0c48-4d04-a714-6154400eb7e7)
+
+In a next step we can fully profile each of the 5 segments using variables such as income, age, boat preferences, etc. and determine if those differences are significant from a statistical point of view when the data is continuous (e.g. the level income). The usual approach is to use ANOVA (or MANOVA if we want to compare multiple variables across groups at the same time).
+![image](https://github.com/user-attachments/assets/aa43cde7-2a33-4750-adbb-4b1a64bcc98f)
+
 
 
