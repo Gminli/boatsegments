@@ -18,41 +18,30 @@ Data_Analytics_Case_MarketSegmentation_LuxuryGoods
 
 **Date:** January 2014 
 
-INSTRUCTIONS FOR PROJECT
----------------------------------------------------------
+Background of the project
+--------------------------------------------------
 
-(*NOTE: The very first time you run the project it may take a couple of minutes as it will also install all necessary R libraries. These are listed in the library.R file in the R_code directory*).
+** A boating company had become a victim of the crisis in the boating industry. The business problem of the "Boat" case study, although hypothetical, depicts very well the sort of business problems faced by many real companies in an increasingly data-intensive business environment. The management team was now exploring various growth options. Expanding further in some markets, in particular North America, was no longer something to consider for the distant future. It was becoming an immediate necessity. 
 
-
-[1] Please open and source the file RunStudy.R 
-
-This will reproduce the default report and slides of this project, as well as  start the web-application for this project
-
-You can then click on the generated HTML files in the doc directory to view the report or the slides.
-
-**MODIFYING AND RE-RUNNING**
-
-[2] To modify the project parameters, please edit them in the file 
-
-RunStudy.R
-
-and source this file again. A new report, slides, and (if needed) web application will be launched. 
-
-(NOTE: if the web application is running, you will need to first stop that by clicking on the "stop" button in the concole window of your Rstudio)
+The team believed that in order to develop a strategy for North America, they needed a better understanding of their current and potential customers in that market. They believed that they had to build more targeted boats for their most important segments there. To that purpose, the boating company had been commissioned a segmentation project for that market. Being a data-friendly company, the decision was made to develop a segmentation in a data-driven way - none of that soft hold-hands-and-discuss stuff. 
 
 
-[3] To modify the text of the report or the slides, please edit the .Rmd files in the Reports_Slides directory. To modify the Web Application please edit the ui.R and server.R files in the Web_Application directory. After any modifications please repeat step 2 to generate the new report, slides, and launch the new Web application. 
+The Data
+--------------------------------------------
 
-[4] You can modify the parameters of the project and generate new customized reports through the web application. 
+With the aid of a market research firm, the boating company gathered various data about the boating market in the US through interviews with almost 3,000 boat owners and intenders. The data consisted, among others, 29 attitudes towards boating, which respondents indicated on a 5-point scale (Q. 1, 1-29 shown in the survey in the appendix).
 
-**Note:** Please press the stop button in the Console window to stop running the web application when needed.
+Other types of information had been collected, such as demographics (Q. 11-15 in the survey). Finally, the boating company had compiled information about the boats, such as the length of the boat they owned, how they used their boats, and the price of the boats (Q. 2-10 in the survey). A segmentation and profile of the market would be done using all this data. 
 
-**Note:** Sourcing the RunStudy.R file will create 2 new html file in the doc directory (one for the report and one for the slides). If you want to publish those online, you will need to move them to a gh-pages branch and delete them from the master branch afterwards. To do so please follow the following steps:
+The Approach
+--------------------------------------------
 
-1. commit the files in your master branch
+Based on past experience, the decision was made to develop a segmentation that was mostly driven by attitudes that consumer held regarding boating - the attitudinal data from the 29 questions in Q.1.
 
-2. switch to the gh-pages branch (from the *Shell* (under the *Tools* menu), type *git checkout gh-pages*)
+### Factor Analysis
 
-3. Once in the gh-pages branch, you can copy the html files from the master branch by typing in the shell file the command *git checkout master doc/SP500_Report.html* and *git checkout master doc/SP500_Slides.html*. Your report and slides are now available online through gh-pages.
+As a first step, the company decided to simplify the data by grouping the 29 attitudinal statements in Q1 into a few meaningful sets/factors. This could be done using a standard method: factor analysis. The objective is to summarize information (the variation) in correlated raw attributes to a smaller number of manageable factors - which are typically uncorrelated or independent. In the process one decreases the number of raw attributes while keeping most of the information in the data in a statistical sense. This data reduction technique is a very useful step in helping interpreting the data and make better decisions. It also helps to identify the key variables that should be used in the segmentation procedure. 
 
-4. You should now go back to the master branch (in the *Shell* type *git checkout master*) and delete the 2 html files from the doc directory (before pushing any new material back on your master branch on github).
+We first have to read the whole dataset, which is in CSV format.
+
+For the Factor Analysis, we will only use the 29 items of the data that describe the attitudes towards boating of people in the sample. Such 29 items are measured on a Likert scale of 1-5. All the 29 items are integer variables that take values between 1 (=strongly disagree) and 5 (=strongly agree).
